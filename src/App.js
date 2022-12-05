@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
+  Routes,
   Route
 } from "react-router-dom";
 
@@ -67,7 +68,8 @@ function App() {
               <>
                 <AddTodo addTodo={addTodo} />
                 <Todos todos={todos} onDelete={onDelete} />
-              </>)
+              </>
+            )
           }}>
           </Route>
           <Route exact path="/about">
