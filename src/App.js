@@ -1,7 +1,5 @@
 import './App.css';
 import { NavBar } from './components/NavBar.js';
-import React, { memo } from 'react'
-import PropTypes from 'prop-types'
 import { Todos } from './components/Todos';
 
 
@@ -12,6 +10,16 @@ function App() {
             sno: 1,
             title: "Complete homework",
             desc: "Do homework asap!"
+        },
+        {
+            sno: 2,
+            title: "Complete homeworkkk",
+            desc: "Doooo homework asap!"
+        },
+        {
+            sno: 3,
+            title: "Complete homeworkkkkkkk",
+            desc: "Dooooooooo homework asap!"
         }
     ]
 
@@ -19,6 +27,7 @@ function App() {
         <>
             <NavBar title={'My Todos'} />
             <Todos todos={todos} />
+            
         </>
     );
 }
