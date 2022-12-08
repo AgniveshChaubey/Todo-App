@@ -1,11 +1,11 @@
 import './App.css';
 import { NavBar } from './components/NavBar.js';
 import { Todos } from './components/Todos';
-
+import { useState } from 'react';
 
 function App() {
 
-    let todos = [
+    const [todos, setTodos] = useState([
         {
             sno: 1,
             title: "Complete homework",
@@ -21,11 +21,14 @@ function App() {
             title: "Complete homeworkkkkkkk",
             desc: "Dooooooooo homework asap!"
         }
-    ]
-    const onDelete = (todo)=>{
-        console.log("i am delete",todo)
-    }
+    ]);
 
+    const onDelete = (todo)=>{
+        console.log("i am delete",todo);
+        setTodos(todos.filter((e)=>{
+            return e!==todo;
+        }));
+    }
 
     return (
         <>
