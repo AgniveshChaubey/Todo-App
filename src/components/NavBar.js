@@ -1,3 +1,7 @@
+import React, { memo } from 'react'
+import PropTypes from 'prop-types'
+
+
 export function NavBar(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
@@ -26,3 +30,12 @@ export function NavBar(props) {
     </nav>
   );
 };
+
+
+// NavBar.propTypes = {
+//   title : PropTypes.string
+// }
+
+// NavBar.defaultProps = {
+//     title : "dhqfiuewgb"
+// }
