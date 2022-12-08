@@ -5,7 +5,7 @@ import { NavBar } from './components/NavBar.js';
 function App() {
  return(
   <>
-  <NavBar />
+  <NavBar title="My Todos"/>
   </>
  );
 }
