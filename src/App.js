@@ -2,6 +2,7 @@ import './App.css';
 import { NavBar } from './components/NavBar.js';
 import { Todos } from './components/Todos';
 import { useState } from 'react';
+import { Footer } from './components/Footer';
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
         <>
             <NavBar title={'My Todos'} />
             <Todos todos={todos} onDelete={onDelete} />
-
+            <Footer />
         </>
     );
 }
