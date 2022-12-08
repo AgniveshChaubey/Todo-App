@@ -2,9 +2,6 @@ import React from 'react'
 import {TodoItem} from './TodoItem'
 
 export const Todos = (props) => {
-  const onDelete = ()=>{
-    
-  }
   return (
     <div className='container'>
       <h3 className='text-center m-3'>Todos List</h3>
@@ -12,7 +9,7 @@ export const Todos = (props) => {
         props.todos.map((todo)=>{
           return (
             <>
-            <TodoItem todo={todo} onDelete = {onDelete}/>
+            <TodoItem todo={todo} key={todo.sno} onDelete = {props.onDelete}/>
             </>
             )
         })

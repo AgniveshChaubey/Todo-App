@@ -22,12 +22,16 @@ function App() {
             desc: "Dooooooooo homework asap!"
         }
     ]
+    const onDelete = (todo)=>{
+        console.log("i am delete",todo)
+    }
+
 
     return (
         <>
             <NavBar title={'My Todos'} />
-            <Todos todos={todos} />
-            
+            <Todos todos={todos} onDelete={onDelete} />
+
         </>
     );
 }
