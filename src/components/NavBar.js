@@ -37,5 +37,5 @@ export function NavBar(props) {
 // }
 
 // NavBar.defaultProps = {
-//     title : "dhqfiuewgb"
+//     title : ""
 // }
