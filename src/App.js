@@ -1,7 +1,7 @@
 import './App.css';
 import { NavBar } from './components/NavBar.js';
 import { Todos } from './components/Todos';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Footer } from './components/Footer';
 import { AddTodos } from './components/AddTodos';
 
@@ -38,13 +38,15 @@ function App() {
             desc: desc,
         }
         setTodos(...todos, myTodo);
-        console.log(myTodo);
-
-        localStorage.setItem("todos", JSON.stringify(todos));
+        console.log(myTodo); 
     }
 
     const [todos, setTodos] = useState(initTodo);
 
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }, [todos])
+    
     return (
         <>
             <NavBar title={'My Todos'} />
