@@ -6,6 +6,13 @@ import { Footer } from './components/Footer';
 import { AddTodos } from './components/AddTodos';
 
 function App() {
+    let initTodo;
+    if (localStorage.getItem("todos")===null) {
+        initTodo = [];
+    } else {
+        initTodo = JSON.parse(localStorage.getItem("todos"));
+    }
+
 
     const onDelete = (todo) => {
         console.log("i am delete", todo);
@@ -13,6 +20,8 @@ function App() {
         setTodos(todos.filter((e) => {
             return e !== todo;
         }));
+
+        localStorage.setItem("todos", JSON.stringify(todos));
     }
 
     const addTodo = (title, desc) => {
@@ -30,25 +39,11 @@ function App() {
         }
         setTodos(...todos, myTodo);
         console.log(myTodo);
+
+        localStorage.setItem("todos", JSON.stringify(todos));
     }
 
-    const [todos, setTodos] = useState([
-        {
-            sno: 1,
-            title: "Complete homework",
-            desc: "Do homework asap!"
-        },
-        {
-            sno: 2,
-            title: "Complete homeworkkk",
-            desc: "Doooo homework asap!"
-        },
-        {
-            sno: 3,
-            title: "Complete homeworkkkkkkk",
-            desc: "Dooooooooo homework asap!"
-        }
-    ]);
+    const [todos, setTodos] = useState(initTodo);
 
     return (
         <>
